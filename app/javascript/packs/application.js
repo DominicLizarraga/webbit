@@ -15,7 +15,10 @@ Turbolinks.start()
 ActiveStorage.start()
 
 
-import "stylesheets/application";
+import "./tabs.js";
+import "components/dropdown.js";
+
+
 
 //= require jquery
 //= require jquery_ujs
