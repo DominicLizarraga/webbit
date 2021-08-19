@@ -16,7 +16,7 @@
 
 <p>
   <strong>image:</strong>
-  <%= image_tag @submission.submission_image.large.url, width: 400 %>
+  <%= image_tag @submission.submission_image.large.url, width: 400 if @submission.submission_image.present? %>
 </p>
 
 <%= link_to 'Edit', edit_submission_path(@submission) %> |

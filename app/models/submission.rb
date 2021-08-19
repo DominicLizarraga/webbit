@@ -6,7 +6,6 @@ class Submission < ApplicationRecord
   belongs_to :community
 
   validates :title, presence: true
-  validates :body, length { maximum: 8000 }
-  validates :url, url: true, allow_blank: true
+  validates :body, length: { maximum: 8000 }
 
 end
