@@ -1,12 +1,10 @@
-<%= form_with(model: submission) do |form| %>
+<%= form_with(model: submission, local: true) do |form| %>
   <% if submission.errors.any? %>
-    <div id="error_explanation" class="border-red-400 p-4 rounded border bg-red-100 mb-6">
-      <h2><%= pluralize(submission.errors.count, "error") %> prohibited this submission from being saved:</h2>
-
+    <div id="error_explanation" class="border-red-400 p-4 rounded border bg-red-100 mb-6"><%= pluralize(submission.errors.count, "error") %> prohibited this submission from being saved:</h2>
       <ul class="text-sm mt-2 text-red-500 pl-4">
-        <% submission.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
+      <% submission.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
       </ul>
     </div>
   <% end %>
@@ -52,8 +50,8 @@
   </div>
 
   <div class="mb-6 text">
-    <%= form.label :body, class: "label" %>
-    <%= form.text_area :body, class: "input" %>
+    <%= form.label "Text", class: "label" %>
+    <%= form.text_field :body, class: "input" %>
   </div>
 
   <div class="mb-6 url">
@@ -78,7 +76,6 @@
       </label>
     </div>
   </div>
-
 
   <div class="mb-6">
     <%= form.submit class: "btn btn-purple" %>

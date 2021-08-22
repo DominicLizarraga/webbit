@@ -1,6 +1,8 @@
 <div id="submission-<%= submission.id %>" class="border-b border-r border-l">
   <div class="px-2 pt-2 pb-2 flex items-start flex-wrap">
-
+     <div class="submission-voting text-xs pr-2">
+        <%= render "submissions/voting", submission: submission %>
+      </div>
 
     <div>
       <%= link_to submission do %>
@@ -25,11 +27,12 @@
           <% end %>
         </h3>
 
-
+          w/<%= submission.community %>
 
         <span class="mx-1 inline-block text-sm text-gray-700">•</span>
 
-
+        <%= render "submissions/posted_by", submission: submission %>
+        <%= render "submissions/actions", submission: submission %>
       </div>
     </div>
   </div>
