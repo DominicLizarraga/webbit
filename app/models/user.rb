@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   has_many :submissions
   has_many :communities
+  has_many :comments
+
 
 
   validates :username, uniqueness: true

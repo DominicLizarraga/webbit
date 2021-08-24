@@ -8,6 +8,9 @@ class SubmissionsController < ApplicationController
 
   # GET /submissions/1 or /submissions/1.json
   def show
+    @comment = Comment.new
+    # @submission = Submission.find(params[:id])
+    # @submission.comments = @submission.comment.find(params[:id])
   end
 
   # GET /submissions/new
