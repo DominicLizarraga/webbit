@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_comment, only: [:edit, :update, :show, :destroy]
+  before_action :set_comment, only: [:update, :show, :destroy]
   before_action :set_submission
 
 
@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = @submission.comments.create(params[:comment].permit(:reply, :submission_id))
-    @comment.user = current_user.id
+    @comment.user_id = current_user.id
 
     respond_to do |format|
       if @comment.save
@@ -27,6 +27,10 @@ class CommentsController < ApplicationController
   end
 
   def edit
+    @comment = Comment.find(params[:id])
+    respond_to do |format|
+      format.js
+    end
   end
 
   def update
@@ -52,7 +56,7 @@ class CommentsController < ApplicationController
   end
 
   def set_comment
-    @comment = @submission.comments.find(params[:id])
+    @comment = Comment.find(params[:id])
   end
 
   def comment_params
