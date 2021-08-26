@@ -17,6 +17,9 @@ ActiveStorage.start()
 
 import "./tabs.js";
 import "components/dropdown.js";
+import "components/modal.js";
+
+
 
 
 
