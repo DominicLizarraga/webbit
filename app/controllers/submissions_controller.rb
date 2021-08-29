@@ -59,6 +59,38 @@ class SubmissionsController < ApplicationController
     end
   end
 
+  def upvote
+    respond_to do |format|
+      unless current_user.voted_for? @submission
+        format.html { redirect_back(fallback_location: root_path) }
+        format.json { head :no_content }
+        format.js { flash.now[:notice] = "Successfully upvoted submission" }
+        @submission.upvote_by current_user
+      else
+        format.html { redirect_back(fallback_location: root_path) }
+        format.json { head :no_content }
+        format.js { flash.now[:notice] = "You already voted this" }
+      end
+    end
+  end
+
+  def downvote
+    respond_to do |format|
+      unless current_user.voted_for? @submission
+        format.html { redirect_back(fallback_location: root_path) }
+        format.json { head :no_content }
+        format.js { flash.now[:notice] = "Successfully downvoted submission" }
+        @submission.downvote_by current_user
+      else
+        format.html { redirect_back(fallback_location: root_path) }
+        format.json { head :no_content }
+        format.js { flash.now[:notice] = "You already vote this submission" }
+      end
+    end
+  end
+
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_submission

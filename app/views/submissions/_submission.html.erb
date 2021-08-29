@@ -27,7 +27,9 @@
           <% end %>
         </h3>
 
-          w/<%= submission.community %>
+        <%= link_to community_path(submission.community), class: "no-underline text-gray-700 font-normal hover:text-gray-700 hover:underline text-sm inline-block" do %>
+          w/<%= submission.community.name %>
+        <% end %>
 
         <span class="mx-1 inline-block text-sm text-gray-700">•</span>
 

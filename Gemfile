@@ -22,6 +22,7 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'acts_as_votable', '~> 0.13.1'
 gem 'devise'
 gem 'carrierwave', '~> 2.2', '>= 2.2.2'
 gem 'mini_magick', '~> 4.11'

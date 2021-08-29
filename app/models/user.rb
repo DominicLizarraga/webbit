@@ -13,4 +13,7 @@ class User < ApplicationRecord
   validates :username, uniqueness: true
   validates :username, presence: true
 
+  acts_as_votable
+
+
 end
