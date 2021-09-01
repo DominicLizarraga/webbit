@@ -43,6 +43,11 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    @comment.destroy
+    redirect_to submission_path(@submission)
+  end
+
   def upvote
     respond_to do |format|
       unless current_user.voted_for? @comment
@@ -73,9 +78,6 @@ class CommentsController < ApplicationController
     end
   end
 
-  def downvote
-
-  end
 
   private
 
