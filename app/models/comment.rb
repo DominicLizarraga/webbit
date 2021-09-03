@@ -9,10 +9,4 @@ class Comment < ApplicationRecord
 
   acts_as_votable
 
-
-  def total_vote_count
-
-
-  end
-
 end

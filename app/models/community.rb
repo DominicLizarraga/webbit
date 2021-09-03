@@ -1,6 +1,9 @@
 class Community < ApplicationRecord
   belongs_to :user
   has_many :submissions
+  has_many :users, through: :subscriptions
+  has_many :subscriptions
+
 
   before_save :format_name
 

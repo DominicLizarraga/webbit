@@ -1,7 +1,4 @@
-var editComment = document.getElementById("edit-comment");
-var modalInner = document.querySelector(".modal-inner");
-
-editComment.querySelector(".modal").classList.add("is-active");
+var editComment = document.getElementById('edit-comment');
+var modalInner = document.querySelector('.modal-inner');
+editComment.querySelector('.modal').classList.add('is-active');
 modalInner.insertAdjacentHTML("afterbegin", "<%= escape_javascript(render partial: 'comments/modal') %>");
-
-

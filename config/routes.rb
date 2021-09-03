@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :communities
+  resources :communities do
+    resource :subscription
+  end
 
   resources :submissions do
     member do
