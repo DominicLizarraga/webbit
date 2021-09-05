@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_many :comments
 
 
+  has_many :subscribed_submissions, through: :communities, source: :submissions
 
 
 

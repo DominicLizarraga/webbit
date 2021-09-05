@@ -5,9 +5,11 @@ class SubmissionsController < ApplicationController
   # GET /submissions
   # GET /submissions.json
   def index
-
+    if user_signed_in?
+      @submissions = current_user.subscribed_submissions
+    else
       @submissions = Submission.all
-
+    end
   end
 
   # GET /submissions/1
