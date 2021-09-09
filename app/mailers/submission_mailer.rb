@@ -6,6 +6,8 @@ class SubmissionMailer < ApplicationMailer
     @submission = params[:submission]
 
 
-    mail to: @submission.user.email, subject: "New response on #{@submission.title}"
+    if @submission.user.comment_subscription?
+      mail to: @submission.user.email, subject: "New response on: #{@submission.title}"
+    end
   end
 end
