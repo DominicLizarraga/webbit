@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  before_create :add_unsuscribe_hash
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -21,6 +23,12 @@ class User < ApplicationRecord
 
   acts_as_votable
   acts_as_voter
+
+  private
+
+  def add_unsuscribe_hash
+    self.unsubscribe_hash = SecureRandom.hex
+  end
 
 
 end

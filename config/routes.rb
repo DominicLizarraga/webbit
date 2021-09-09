@@ -20,6 +20,11 @@ Rails.application.routes.draw do
     end
   end
 
+  # verb path, to: "controller#action"
+
+  get "submissions/unsubscribe/:unsubscribe_hash", to: "submissions#unsubscribe", :as =>
+  "comment_unsubscribe"
+
   devise_for :users
 
   resources :users, only: [:show], as: "profile"
