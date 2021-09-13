@@ -18,6 +18,8 @@ ActiveStorage.start()
 import "./tabs.js";
 import "components/dropdown.js";
 import "components/modal.js";
+require("trix")
+require("@rails/actiontext")
 
 
 
@@ -27,3 +29,6 @@ import "components/modal.js";
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+require("trix")
+require("@rails/actiontext")
