@@ -6,6 +6,10 @@ module ApplicationHelper
     inline_svg_tag(filename, aria: true, nocomment: true, title: title, class: styles)
   end
 
-
+  def inject_feed_ad(index)
+    if((index + 1) % 3 == 0)
+      render "feed_add"
+    end
+  end
 
 end
