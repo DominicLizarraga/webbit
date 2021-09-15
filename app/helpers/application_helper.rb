@@ -12,4 +12,8 @@ module ApplicationHelper
     end
   end
 
+  def active_subscriber?
+    user_signed_in? && current_user.subscribed?
+  end
+
 end

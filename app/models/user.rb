@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   before_create :add_unsuscribe_hash
 
+  extend FriendlyId
+  friendly_id :username, use: :slugged
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,

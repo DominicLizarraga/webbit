@@ -27,8 +27,12 @@ gem 'devise'
 gem 'carrierwave', '~> 2.2', '>= 2.2.2'
 gem 'mini_magick', '~> 4.11'
 gem 'inline_svg', '~> 1.7', '>= 1.7.2'
+gem 'stripe', '~> 5.38'
 gem 'sidekiq', '~> 6.2', '>= 6.2.2'
 gem 'ransack', '~> 2.4', '>= 2.4.2'
+gem 'friendly_id', '~> 5.4', '>= 5.4.2'
+gem 'meta-tags', '~> 2.15'
+
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

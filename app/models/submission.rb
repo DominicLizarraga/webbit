@@ -17,6 +17,9 @@ class Submission < ApplicationRecord
 
   acts_as_votable
 
+  extend FriendlyId  # add this line
+  friendly_id :title, use: :slugged # add this line
+
 
   private
 
